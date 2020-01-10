@@ -16,10 +16,13 @@ def register(req):
             form=UserForm(req.POST , req.FILES)
             if form.is_valid():
                 form.save()
-                return HttpResponse('<script>alert("Registration Successful....Now you can login.");</script>')
+                return redirect('/validation')
+                #return HttpResponse('<script>alert("Registration Successful....Now you can login.");</script>')
         else:
             form = UserForm()
         return render(req,'register.html',{'form' : form})
     except:
         return render(req,'register.html')
 
+def validation(req):
+    return HttpResponse('<h1>Registration Successfull</h1><div class="card-footer"><a class="btn btn-primary"  href="../">Log in instead<i  aria-hidden="true"></i></a></div>')

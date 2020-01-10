@@ -17,7 +17,7 @@
             <div class="column is-half is-offset-one-quarter">
                 <div class="content"><h2>Register</h2></div>
                 <div >
-                <form  method="post" class='px-4 py-3'>
+                <form  method="post" class='px-4 py-3' enctype="multipart/form-data">
                     {% csrf_token %}
                     
                     {% for field in form %}
@@ -30,6 +30,12 @@
                     <br>
                     <br>
                 </form>
+                <div class="card-footer">
+                    <a class="btn btn-primary"  href="../">
+                        Log in instead
+                        <i  aria-hidden="true"></i>
+                    </a>
+                </div>
                 </div>
             </div>
         </div>
